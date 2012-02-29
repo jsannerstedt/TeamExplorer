@@ -1,0 +1,53 @@
+﻿@model TeamExplorer.Models.Charter
+@{
+    ViewBag.Title = "Details";
+}
+<!-- Submit form with js and expand issue view -->
+<form>
+    <fieldset>
+        <legend>Report new issue</legend>
+        <label for="issue-type">
+            Type</label>
+        <select>
+            <option>Bug</option>
+            <option>Issue</option>
+            <option>Note</option>
+        </select>
+        <label for="description">
+            Description</label>
+        <input type="text" id="description" />
+        <input type="submit" value="Create" />
+    </fieldset>
+</form>
+
+<fieldset>
+    <legend>Issue details</legend>
+    <label>Markdown description</label>
+    <textarea></textarea>
+    <label>Stacktrace</label>
+    <textarea></textarea>
+    <label>Upload screenshot</label>
+    <input type="file"/>
+    
+</fieldset>
+
+<table>
+    <caption>
+        Reported issues</caption>
+    <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Description
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Bug</td>
+            <td>There was a problem with the issue</td>
+        </tr>
+    </tbody>
+</table>

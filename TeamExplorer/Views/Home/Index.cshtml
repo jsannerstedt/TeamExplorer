@@ -1,0 +1,13 @@
+﻿@model IEnumerable<TeamExplorer.Models.Charter>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Active Charters</h2>
+<ul>
+    @foreach(var charter in Model)
+    {
+        <li>@Html.ActionLink(charter.Title, "Index","Charter", new {charter.Id}, null)</li>
+    }
+
+</ul>

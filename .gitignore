@@ -1,0 +1,6 @@
+bin
+obj
+*.suo
+_Re[sS]harper.*
+*.user
+build
