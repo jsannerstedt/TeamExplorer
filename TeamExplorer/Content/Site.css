@@ -1,4 +1,6 @@
-body {
+body 
+{
+    padding-top: 40px;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     color: #232323;
@@ -8,7 +10,6 @@ body {
 header, footer, nav, section {
     display: block;
 }
-
 
 /* Styles for basic forms
 -----------------------------------------------------------*/

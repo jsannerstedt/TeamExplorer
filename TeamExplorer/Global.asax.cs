@@ -44,6 +44,8 @@ namespace TeamExplorer
             RegisterRoutes(RouteTable.Routes);
 
             BundleTable.Bundles.RegisterTemplateBundles();
+            BundleTable.Bundles.EnableBootstrapBundle();
+            
         }
     }
 }
