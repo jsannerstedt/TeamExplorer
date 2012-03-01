@@ -4,3 +4,5 @@ obj
 _Re[sS]harper.*
 *.user
 build
+/packages/RavenDB.1.0.700/server/Data
+/packages/RavenDB.1.0.700/server/Logs
