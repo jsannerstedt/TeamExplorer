@@ -6,6 +6,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using Raven.Client;
+using Raven.Client.Document;
 
 namespace TeamExplorer
 {
@@ -45,7 +47,16 @@ namespace TeamExplorer
 
             BundleTable.Bundles.RegisterTemplateBundles();
             BundleTable.Bundles.EnableBootstrapBundle();
+
+            if (DocumentStore != null) return; // prevent misuse
+
+            DocumentStore = new DocumentStore
+            {
+                ConnectionStringName = "RavenDB"
+            }.Initialize();
             
         }
+
+        public static IDocumentStore DocumentStore;
     }
 }

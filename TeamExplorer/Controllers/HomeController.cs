@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,15 +8,22 @@ using TeamExplorer.Models;
 
 namespace TeamExplorer.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : DocumentController
     {
         //
         // GET: /Home/
 
         public ActionResult Index()
         {
-            IEnumerable<Charter> charters = new[] {new Charter{Title = "My charter", Id = 1}};
+            /* Create the first charter if it doensn't exists */
+            var charter = DocumentSession.Load<Charter>(1);
+            if (charter == null)
+            {
+                DocumentSession.Store(new Charter {Title = "Raven charter..."});
+                DocumentSession.SaveChanges();
+            }
 
+            IEnumerable<Charter> charters = DocumentSession.Query<Charter>();
             return View(charters);
         }
 
