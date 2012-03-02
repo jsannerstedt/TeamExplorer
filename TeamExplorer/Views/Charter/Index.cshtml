@@ -6,31 +6,29 @@
 <form>
     <fieldset>
         <legend>Report new issue</legend>
-        <label for="issue-type">
-            Type</label>
+        <label>Type</label>
         <select>
             <option>Bug</option>
             <option>Issue</option>
             <option>Note</option>
         </select>
-        <label for="description">
-            Description</label>
-        <input type="text" id="description" />
+        <label >Description</label>
+        <input type="text"/>
         <input type="submit" value="Create" />
     </fieldset>
 </form>
-
 <fieldset>
     <legend>Issue details</legend>
-    <label>Markdown description</label>
+    <label>
+        Markdown description</label>
     <textarea></textarea>
-    <label>Stacktrace</label>
+    <label>
+        Stacktrace</label>
     <textarea></textarea>
-    <label>Upload screenshot</label>
-    <input type="file"/>
-    
+    <label>
+        Upload screenshot</label>
+    <input type="file" />
 </fieldset>
-
 <table class="table-striped">
     <caption>
         Reported issues</caption>
@@ -46,8 +44,12 @@
     </thead>
     <tbody>
         <tr>
-            <td>Bug</td>
-            <td>There was a problem with the issue</td>
+            <td>
+                Bug
+            </td>
+            <td>
+                There was a problem with the issue
+            </td>
         </tr>
     </tbody>
 </table>
