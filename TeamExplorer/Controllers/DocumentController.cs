@@ -1,5 +1,6 @@
 ﻿using System.Web.Mvc;
 using Raven.Client;
+using TeamExplorer.Queries;
 
 namespace TeamExplorer.Controllers
 {
@@ -23,6 +24,7 @@ namespace TeamExplorer.Controllers
             return query.Execute();
         }
 
+
         // TODO: Consider re-applying https://github.com/ayende/RaccoonBlog/commit/ff954e563e6996d44eb59a28f0abb2d3d9305ffe
         protected override void OnActionExecuted(ActionExecutedContext filterContext)
         {
@@ -45,12 +47,5 @@ namespace TeamExplorer.Controllers
 
             //TaskExecutor.StartExecuting();
         }
-    }
-
-    public abstract class Query<T>
-    {
-        public IDocumentSession Session { get; set; }
-
-        public abstract T Execute();
     }
 }
