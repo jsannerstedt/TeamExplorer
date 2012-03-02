@@ -3,32 +3,48 @@
     ViewBag.Title = "Details";
 }
 <!-- Submit form with js and expand issue view -->
-<form>
-    <fieldset>
-        <legend>Report new issue</legend>
-        <label>Type</label>
-        <select>
-            <option>Bug</option>
-            <option>Issue</option>
-            <option>Note</option>
-        </select>
-        <label >Description</label>
-        <input type="text"/>
-        <input type="submit" value="Create" />
-    </fieldset>
-</form>
-<fieldset>
-    <legend>Issue details</legend>
-    <label>
-        Markdown description</label>
-    <textarea></textarea>
-    <label>
-        Stacktrace</label>
-    <textarea></textarea>
-    <label>
-        Upload screenshot</label>
-    <input type="file" />
-</fieldset>
+<h2>@Model.Title</h2>
+<a class="btn" data-toggle="modal" href="#myModal">Create new issue</a>
+<div class="modal" id="myModal" style="display: none">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h2>
+            New issue</h2>
+    </div>
+    <div class="modal-body">
+        <form>
+        <fieldset>
+            <legend>Main info</legend>
+            <label>
+                Type</label>
+            <select>
+                <option>Bug</option>
+                <option>Issue</option>
+                <option>Note</option>
+            </select>
+            <label>
+                Description</label>
+            <input type="text" />
+        </fieldset>
+        <fieldset>
+            <legend>Details</legend>
+            <label>
+                Markdown description</label>
+            <textarea></textarea>
+            <label>
+                Stacktrace</label>
+            <textarea></textarea>
+            <label>
+                Upload screenshot</label>
+            <input type="file" />
+        </fieldset>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn btn-primary">Save changes</a> <a href="#" data-dismiss="modal"
+            class="btn">Close</a>
+    </div>
+</div>
 <table class="table-striped">
     <caption>
         Reported issues</caption>

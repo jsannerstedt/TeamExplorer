@@ -14,12 +14,12 @@ namespace TeamExplorer
 
             bundles.Add(bootstrapCss);
 
-            //var bootstrapJs = new Bundle("~/bootstrap/js", new JsMinify());
-            //bootstrapJs.AddFile("~/js/jquery-1.7.1.js");
-            //bootstrapJs.AddFile("~/js/bootstrap.js");
+            var bootstrapJs = new Bundle("~/bootstrap/js", new JsMinify());
+            bootstrapJs.AddFile("~/Scripts/jquery-1.7.1.js");
+            //bootstrapJs.AddFile("~/Scripts/bootstrap-modal.js");
             //bootstrapJs.AddFile("~/js/prettify.js");
 
-            //bundles.Add(bootstrapJs);
+            bundles.Add(bootstrapJs);
         }
     }
 }
