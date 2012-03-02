@@ -1,11 +1,12 @@
 ﻿using System.Web.Mvc;
 using Raven.Client;
+using TeamExplorer.Queries;
 
 namespace TeamExplorer.Controllers
 {
     public abstract class DocumentController : Controller
     {
-                public static IDocumentStore DocumentStore
+        public static IDocumentStore DocumentStore
         {
             get { return MvcApplication.DocumentStore; }
         }
@@ -46,12 +47,5 @@ namespace TeamExplorer.Controllers
 
             //TaskExecutor.StartExecuting();
         }
-    }
-
-    public abstract class Query<T>
-    {
-        public IDocumentSession Session { get; set; }
-
-        public abstract T Execute();
     }
 }
