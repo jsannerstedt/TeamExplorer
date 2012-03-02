@@ -9,17 +9,5 @@ namespace TeamExplorer.Models
         public bool IsActive { get; set; }
         public Session Session { get; set; }
     }
-
-    public class Issue
-    {
-        
-    }
-
-    public class Session
-    {
-        public DateTime Date { get; set; }
-
-        public int Id { get; set; }
-    }
 }
 

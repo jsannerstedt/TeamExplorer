@@ -16,7 +16,7 @@ namespace TeamExplorer
 
             var bootstrapJs = new Bundle("~/bootstrap/js", new JsMinify());
             bootstrapJs.AddFile("~/Scripts/jquery-1.7.1.js");
-            //bootstrapJs.AddFile("~/Scripts/bootstrap-modal.js");
+            bootstrapJs.AddFile("~/Scripts/bootstrap-modal.js");
             //bootstrapJs.AddFile("~/js/prettify.js");
 
             bundles.Add(bootstrapJs);
