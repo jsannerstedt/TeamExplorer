@@ -11,3 +11,22 @@
     }
 
 </ul>
+
+<h1>Paste an image at me...</h1>
+<img id="clipboard" alt="Clipboard" />
+
+<script>
+    document.onpaste = function (event) {
+        var items = event.clipboardData.items;
+        console.log(JSON.stringify(items));
+
+        var blog = items[0].getAsFile();
+        var reader = new FileReader();
+        reader.onload = function (event) {
+            console.log(event.target.result);
+
+            $("#clipboard").attr("src", event.target.result);
+        };
+        var im = reader.readAsDataURL(blog);
+    };
+</script>
