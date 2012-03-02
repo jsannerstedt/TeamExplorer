@@ -9,6 +9,7 @@ namespace TeamExplorer
             var bootstrapCss = new Bundle("~/bootstrap/css", new CssMinify());
             bootstrapCss.AddFile("~/Content/bootstrap.css");
             bootstrapCss.AddFile("~/Content/bootstrap-responsive.css");
+            bootstrapCss.AddFile("~/Content/custom.css");
             
 
             bundles.Add(bootstrapCss);
