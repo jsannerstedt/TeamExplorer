@@ -5,7 +5,7 @@ namespace TeamExplorer.Controllers
 {
     public abstract class DocumentController : Controller
     {
-                public static IDocumentStore DocumentStore
+        public static IDocumentStore DocumentStore
         {
             get { return MvcApplication.DocumentStore; }
         }
@@ -22,7 +22,6 @@ namespace TeamExplorer.Controllers
             query.Session = DocumentSession;
             return query.Execute();
         }
-
 
         // TODO: Consider re-applying https://github.com/ayende/RaccoonBlog/commit/ff954e563e6996d44eb59a28f0abb2d3d9305ffe
         protected override void OnActionExecuted(ActionExecutedContext filterContext)

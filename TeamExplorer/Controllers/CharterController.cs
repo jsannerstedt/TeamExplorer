@@ -3,12 +3,12 @@ using TeamExplorer.Models;
 
 namespace TeamExplorer.Controllers
 {
-    public class CharterController : Controller
+    public class CharterController : DocumentController
     {
         public ActionResult Index(int id)
         {
-
-            return View(new Charter());
+            var charter = DocumentSession.Load<Charter>(id);
+            return View(charter);
         }
     }
 }
