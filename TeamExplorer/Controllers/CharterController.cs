@@ -17,6 +17,18 @@ namespace TeamExplorer.Controllers
             charterViewModel.Issues = issues;
             return View(charterViewModel);
         }
+
+        public ActionResult Create(Charter charter)
+        {
+            DocumentSession.Store(charter);
+            DocumentSession.SaveChanges();
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Form()
+        {
+            return PartialView("Form", new Charter{IsActive = true});
+        }
     }
 
     public class CharterViewModel

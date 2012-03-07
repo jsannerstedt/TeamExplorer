@@ -4,3 +4,5 @@
   19:31:51: ska gå att editera ett issue
   19:32:10: ska finnas datum för när ett issue skapades och uppdaterades
   19:33:45: ska gå att lista alla issues från aktiva charters (läs alla till att börja med) dessa ska sedan kunna betas av som won't fix, confirmed. På sikt så vill man kanske kunna skapa ett issue i jira eller på github från rapporen men till en börja kan det duga med en url till ärendet.
+
+skapa/editera charters

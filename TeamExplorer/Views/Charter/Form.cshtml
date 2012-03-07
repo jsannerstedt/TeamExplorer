@@ -1,0 +1,8 @@
+﻿@model TeamExplorer.Models.Charter
+@using (Html.BeginForm("Create", "Charter"))
+{
+    @Html.HiddenFor(model => model.IsActive)
+    @Html.LabelFor(model => model.Title)
+    @Html.TextBoxFor(model => model.Title)
+    <input type="submit" value="Create"/>
+}
