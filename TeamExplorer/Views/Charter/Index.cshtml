@@ -1,9 +1,5 @@
 ﻿@model TeamExplorer.Controllers.CharterViewModel
-@{
-    ViewBag.Title = Model.Charter.Title;
-}
 
-<h1>@Model.Charter.Title</h1>
     
 @Html.Action("Form", "Issue", new { charterId = Model.Charter.Id });
 
@@ -39,7 +35,7 @@
         @foreach(var issue in Model.Issues)
         {
         <tr>
-            <td>@Html.ActionLink(issue.Description, "Show", "Issue", new { issue.Id }, null)</td>
+            <td>@Html.ActionLink(issue.Description ?? "[description]", "Show", "Issue", new { issue.Id }, null)</td>
             <td>@issue.IssueType</td>
         </tr>            
         }
