@@ -1,0 +1,24 @@
+﻿@model TeamExplorer.Models.Issue
+
+@{
+    ViewBag.Title = "Issues" + Model.Id;
+}
+<h1>[@Model.IssueType] @Model.Description</h1>
+<h2>Url</h2>
+<p>Url to reproducece e.g. <a href="#">Ops...</a></p>
+<h2>Markdown</h2>
+<div>
+    <p>Fix markdown styling ala stack overflow here</p>
+</div>
+<h2>Stacktrace</h2>
+<div class="stacktrace">
+    @Model.Stacktrace
+</div>
+<h2>Images</h2>
+<ul class="images">
+@foreach(var image in Model.Images)
+{
+    <li><img src="@image" /></li>
+}
+    
+</ul>

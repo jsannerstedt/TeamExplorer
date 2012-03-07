@@ -1,9 +1,14 @@
-﻿@model TeamExplorer.Models.Charter
+﻿@model TeamExplorer.Controllers.CharterViewModel
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Charter.Title;
 }
-<!-- Submit form with js and expand issue view -->
-<h2>@Model.Title</h2>
+
+<h1>@Model.Charter.Title</h1>
+    
+@Html.Action("Form", "Issue", new { charterId = Model.Charter.Id });
+
+        
+
 <a class="btn" data-toggle="modal" href="#myModal">Create new issue</a>
 <div class="modal" id="myModal" style="display: none">
     <div class="modal-header">
@@ -12,60 +17,31 @@
             New issue</h2>
     </div>
     <div class="modal-body">
-        <form>
-        <fieldset>
-            <legend>Main info</legend>
-            <label>
-                Type</label>
-            <select>
-                <option>Bug</option>
-                <option>Issue</option>
-                <option>Note</option>
-            </select>
-            <label>
-                Description</label>
-            <input type="text" />
-        </fieldset>
-        <fieldset>
-            <legend>Details</legend>
-            <label>
-                Markdown description</label>
-            <textarea></textarea>
-            <label>
-                Stacktrace</label>
-            <textarea></textarea>
-            <label>
-                Upload screenshot</label>
-            <input type="file" />
-        </fieldset>
-        </form>
+
+        
     </div>
     <div class="modal-footer">
         <a href="#" class="btn btn-primary">Save changes</a> <a href="#" data-dismiss="modal"
-            class="btn">Close</a>
+                                                                class="btn">Close</a>
     </div>
 </div>
-<table class="table-striped">
-    <caption>
-        Reported issues</caption>
+
+<h2>Reported issues</h2>
+<table>
+    <caption>Reported issues</caption>
     <thead>
         <tr>
-            <th>
-                Type
-            </th>
-            <th>
-                Description
-            </th>
+            <th>Type</th>
+            <th>Description</th>
         </tr>
     </thead>
     <tbody>
+        @foreach(var issue in Model.Issues)
+        {
         <tr>
-            <td>
-                Bug
-            </td>
-            <td>
-                There was a problem with the issue
-            </td>
-        </tr>
+            <td>@Html.ActionLink(issue.Description, "Show", "Issue", new { issue.Id }, null)</td>
+            <td>@issue.IssueType</td>
+        </tr>            
+        }
     </tbody>
 </table>
