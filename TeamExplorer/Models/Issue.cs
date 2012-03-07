@@ -11,9 +11,9 @@ namespace TeamExplorer.Models
         }
 
         public string Id { get; set; }
-        public string CharterId { get; set; }     
-        
-        public string IssueType { get; set; }
+        public string CharterId { get; set; }
+
+        public IssueType IssueType { get; set; }
         public string Description { get; set; }
         public string Stacktrace { get; set; }
 
@@ -24,9 +24,8 @@ namespace TeamExplorer.Models
         public ICollection<string> Images { get; set; }
     }
 
-    public class IssueType
+    public enum IssueType
     {
-        public string Id { get; set; }
-        public string Description { get; set; }
+        Bug, Issue, Note
     }
 }

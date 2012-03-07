@@ -11,7 +11,7 @@
     <fieldset>
         <legend>Main info</legend>
         @Html.LabelFor(model => model.IssueType)
-        @Html.EditorFor(model => model.IssueType)
+        @Html.DropDownListFor(model => model.IssueType, new[] { new SelectListItem { Text = "Bug", Value = "Bug" }, new SelectListItem { Text = "Issue", Value = "Issue" }, new SelectListItem { Text = "Note", Value = "Note" } })
         @Html.ValidationMessageFor(model => model.IssueType)
         @Html.LabelFor(model => model.Description)
         @Html.EditorFor(model => model.Description)
