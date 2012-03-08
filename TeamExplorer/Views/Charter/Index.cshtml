@@ -1,34 +1,15 @@
 ﻿@model TeamExplorer.Controllers.CharterViewModel
 
-    
-@Html.Action("Form", "Issue", new { charterId = Model.Charter.Id });
-
-        
-
-<a class="btn" data-toggle="modal" href="#myModal">Create new issue</a>
-<div class="modal" id="myModal" style="display: none">
-    <div class="modal-header">
-        <a class="close" data-dismiss="modal">×</a>
-        <h2>
-            New issue</h2>
-    </div>
-    <div class="modal-body">
-
-        
-    </div>
-    <div class="modal-footer">
-        <a href="#" class="btn btn-primary">Save changes</a> <a href="#" data-dismiss="modal"
-                                                                class="btn">Close</a>
-    </div>
-</div>
+<h2>Create a new issue</h2>    
+@Html.Action("Form", "Issue", new { charterId = Model.Charter.Id })
 
 <h2>Reported issues</h2>
 <table>
     <caption>Reported issues</caption>
     <thead>
         <tr>
-            <th>Type</th>
             <th>Description</th>
+            <th>Issue Type</th>
         </tr>
     </thead>
     <tbody>
