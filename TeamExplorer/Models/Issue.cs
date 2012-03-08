@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace TeamExplorer.Models
 {
@@ -13,7 +14,9 @@ namespace TeamExplorer.Models
         public string Id { get; set; }
         public string CharterId { get; set; }
 
+        [Required]
         public IssueType IssueType { get; set; }
+        [Required]
         public string Description { get; set; }
         public string Stacktrace { get; set; }
 
