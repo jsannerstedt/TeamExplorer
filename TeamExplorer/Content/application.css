@@ -1,0 +1,44 @@
+﻿body 
+{
+    font-family: verdana;
+    font-size: 80%;
+    background-color: #EEE;
+}
+
+.navbar {
+    display: none;
+}
+
+fieldset {
+    border: solid 1px #CCC;
+    padding-left: 10px;
+    background-color: #FFF;
+
+}
+
+label {
+    display: block;
+    font-size: 80%;
+    color: #222;
+}
+
+legend {
+    margin: 0;
+    text-align: right;
+}
+
+.field {
+    display: inline-block;
+}
+
+input[type=text] {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
+
+.actions .primary {
+    font-weight: bold;
+}
