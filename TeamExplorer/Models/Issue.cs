@@ -18,6 +18,7 @@ namespace TeamExplorer.Models
         public IssueType IssueType { get; set; }
         [Required]
         public string Description { get; set; }
+        public string Url { get; set; }
         public string Stacktrace { get; set; }
 
         /// <summary>
