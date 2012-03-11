@@ -1,0 +1,14 @@
+﻿@model IEnumerable<TeamExplorer.Models.Charter>
+
+@{
+    ViewBag.Title = "Team explorer";
+    Layout = "_Chrome.cshtml";
+}
+
+<h1>Active Charters</h1>
+<ul>
+    @foreach(var charter in Model)
+    {
+        <li>@Html.ActionLink(charter.Title, "Explore","Chrome", new {charter.Id}, null)</li>
+    }
+</ul>

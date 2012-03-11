@@ -5,15 +5,10 @@
     background-color: #EEE;
 }
 
-.navbar {
-    display: none;
-}
-
 fieldset {
     border: solid 1px #CCC;
     padding-left: 10px;
     background-color: #FFF;
-
 }
 
 label {
@@ -27,15 +22,7 @@ legend {
     text-align: right;
 }
 
-.field {
-    display: inline-block;
-}
-
-input[type=text] {
-    width: 100%;
-}
-
-textarea {
+input[type=text], textarea {
     width: 100%;
 }
 

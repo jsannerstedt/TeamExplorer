@@ -1,0 +1,7 @@
+﻿@model TeamExplorer.Models.Charter
+
+@{
+    ViewBag.Title = string.Format("Create issue - {0} - Team Explorer", Model.Title);
+    Layout = "_Chrome.cshtml";
+}
+@Html.Action("Form","Issue", new {id = Model.Id })

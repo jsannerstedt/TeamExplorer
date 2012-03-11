@@ -19,9 +19,9 @@
             @Html.ValidationMessageFor(model => model.Description)
         </div>
         <div class="field">
-            @Html.LabelFor(model => model.Stacktrace)
-            @Html.TextAreaFor(model => model.Stacktrace)
-            @Html.ValidationMessageFor(model => model.Stacktrace)
+            @Html.LabelFor(model => model.IssueDetails)
+            @Html.TextAreaFor(model => model.IssueDetails)
+            @Html.ValidationMessageFor(model => model.IssueDetails)
         </div>
     </fieldset>
     
@@ -54,5 +54,8 @@
 
 <script src="/Scripts/teamexplorer-paste-image.js"></script>
 <script>
+    $(function () {
+        $("#Description").focus();
+    });
     TeamExplorer.captureImages(".images");
 </script>
