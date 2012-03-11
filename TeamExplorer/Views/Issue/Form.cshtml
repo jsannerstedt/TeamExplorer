@@ -1,7 +1,5 @@
 ﻿@model TeamExplorer.Models.Issue
 
-<script src="/Scripts/teamexplorer-paste-image.js"></script>
-
 @using (Html.BeginForm("Create", "Issue"))
 {
     @Html.HiddenFor(model => model.CharterId)
@@ -9,26 +7,52 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Main info</legend>
-        @Html.LabelFor(model => model.IssueType)
-        @Html.DropDownListFor(model => model.IssueType, new[] { new SelectListItem { Text = "Bug", Value = "Bug" }, new SelectListItem { Text = "Issue", Value = "Issue" }, new SelectListItem { Text = "Note", Value = "Note" } })
-        @Html.ValidationMessageFor(model => model.IssueType)
-        @Html.LabelFor(model => model.Description)
-        @Html.EditorFor(model => model.Description)
-        @Html.ValidationMessageFor(model => model.Description)
+        <legend>Create new issue</legend>
+        <div class="field">
+            @Html.LabelFor(model => model.IssueType)
+            @Html.DropDownListFor(model => model.IssueType, new[] { new SelectListItem { Text = "Bug", Value = "Bug" }, new SelectListItem { Text = "Issue", Value = "Issue" }, new SelectListItem { Text = "Note", Value = "Note" } })
+            @Html.ValidationMessageFor(model => model.IssueType)
+        </div>
+        <div class="field">
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <div class="field">
+            @Html.LabelFor(model => model.Stacktrace)
+            @Html.TextAreaFor(model => model.Stacktrace)
+            @Html.ValidationMessageFor(model => model.Stacktrace)
+        </div>
     </fieldset>
     
     <fieldset>
-        <legend>Details</legend>
-        @Html.LabelFor(model => model.Stacktrace)
-        @Html.TextAreaFor(model => model.Stacktrace)
-        @Html.ValidationMessageFor(model => model.Stacktrace)
+        <legend>Developer information</legend>
+        <div class="field">
+            @Html.LabelFor(model => model.Url)
+            @Html.EditorFor(model => model.Url)
+            @Html.ValidationMessageFor(model => model.Url)
+        </div>
+        <div class="field">
+            @Html.LabelFor(model => model.Stacktrace)
+            @Html.TextAreaFor(model => model.Stacktrace)
+            @Html.ValidationMessageFor(model => model.Stacktrace)
+        </div>
     </fieldset>
     
-    <input type="text" name="image" id="issue-image" />
+    <fieldset class="images" style="display: none;">
+        <legend>Screenshots</legend>
+        <ul class="previews">
+            
+        </ul>    
+    </fieldset>
     
-    <fieldset>
+    <fieldset class="actions">
         <legend>Actions</legend>
-        <input type="submit" value="Create" />
+        <input type="submit" value="Create" class="primary" />
     </fieldset>
 }
+
+<script src="/Scripts/teamexplorer-paste-image.js"></script>
+<script>
+    TeamExplorer.captureImages(".images");
+</script>
