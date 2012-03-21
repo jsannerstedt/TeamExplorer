@@ -26,8 +26,8 @@ input[type=text], textarea {
     width: 100%;
 }
 
-.actions .primary {
-    font-weight: bold;
+.actions {
+    display: none;
 }
 
 /* Styles for validation helpers
@@ -52,4 +52,13 @@ input[type=text], textarea {
 
 .validation-summary-valid {
     display: none;
+}
+
+.previews img {
+    width: 100px;
+}
+
+.previews li {
+    list-style: none;
+    display: inline-block;
 }
