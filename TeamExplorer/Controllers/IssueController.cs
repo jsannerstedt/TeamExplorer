@@ -1,3 +1,4 @@
+using System;
 using System.Web.Mvc;
 using TeamExplorer.Models;
 
@@ -13,7 +14,7 @@ namespace TeamExplorer.Controllers
             issue.Images.Add(imageData);
             DocumentSession.Store(issue);
             DocumentSession.SaveChanges();
-            return RedirectToRoute("Charter", new {id = issue.CharterId});
+            return Json(issue);
         }
 
         public ActionResult Show(string id)

@@ -28,13 +28,7 @@ namespace TeamExplorer
             routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-
-            routes.MapRoute(
-                name: "Charter",
-                url: "work/{id}",
-                defaults: new { controller = "Charter", action = "Index" }
+                defaults: new {id = RouteParameter.Optional}
             );
 
             routes.MapRoute(

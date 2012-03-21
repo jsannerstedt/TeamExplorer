@@ -1,6 +1,21 @@
 ﻿@model TeamExplorer.Models.Issue
+@{
+    var formData = new Dictionary<string, object>
+                       {
+                           {"data-ajax", true}
+                       };
+}
+<script src="/Scripts/jquery.unobtrusive-ajax.js"></script>
 
-@using (Html.BeginForm("Create", "Issue"))
+<script>
+    function created(x, y) {
+        // Space i important and I would like to do something useful with the action bar
+        // Another option is to remove the actionbar and higlight the form itself only for the chrome app
+        $(".actions").css("border", "solid 1px #0F0");
+    }
+</script>
+
+@using (Ajax.BeginForm("Create", "Issue", FormMethod.Post, new AjaxOptions { OnSuccess = "created" }))
 {
     @Html.HiddenFor(model => model.CharterId)
     
